@@ -8,11 +8,16 @@
       <TargetFramework>net10.0-windows</TargetFramework>
       <UseWindowsForms>true</UseWindowsForms>
       <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+      <ApplicationIcon>Res\Desktop.ico</ApplicationIcon>
    </PropertyGroup>
 
    <ItemGroup>
      <None Remove="Upload.bat" />
      <None Remove="Upload.ps1" />
+   </ItemGroup>
+
+   <ItemGroup>
+     <Content Include="Res\Desktop.ico" />
    </ItemGroup>
 
    <ItemGroup>
@@ -27,6 +32,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Res\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +53,19 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management" Version="10.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Res\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

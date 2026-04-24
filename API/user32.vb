@@ -2,7 +2,7 @@
 ' user32.dll API declarations
 '
 '   (C) 2026 Remus Rigo
-'      v1.0 - 2026-04-16
+'      v1.0 - 2026-04-24
 '--------------------------------------------------------------------------------------------------
 
 Imports System.Runtime.InteropServices
@@ -200,21 +200,11 @@ Friend Module user32
    End Structure
 
    <StructLayout(LayoutKind.Sequential)>
-   Friend Structure GDI_POINT
-      Public X As Integer
-      Public Y As Integer
-      Sub New(x As Integer, y As Integer)
-         Me.X = x : Me.Y = y
-      End Sub
-   End Structure
-
-   <StructLayout(LayoutKind.Sequential)>
-   Friend Structure GDI_SIZE
-      Public Width As Integer
-      Public Height As Integer
-      Sub New(w As Integer, h As Integer)
-         Width = w : Height = h
-      End Sub
+   Friend Structure RECT
+      Public Left As Integer
+      Public Top As Integer
+      Public Right As Integer
+      Public Bottom As Integer
    End Structure
 
    <StructLayout(LayoutKind.Sequential)>
@@ -226,18 +216,6 @@ Friend Module user32
 
    '-----------------------------------------------------------------------------------------------
    ' Functions
-
-   <DllImport("gdi32.dll")>
-   Friend Function CreateCompatibleDC(hDC As IntPtr) As IntPtr
-   End Function
-
-   <DllImport("gdi32.dll")>
-   Friend Function DeleteDC(hDC As IntPtr) As Boolean
-   End Function
-
-   <DllImport("gdi32.dll")>
-   Friend Function DeleteObject(hObj As IntPtr) As Boolean
-   End Function
 
    <DllImport("user32.dll")>
    Friend Function EnumWindows(lpEnumFunc As EnumWindowsProc, lParam As IntPtr) As Boolean
@@ -256,11 +234,11 @@ Friend Module user32
    End Function
 
    <DllImport("user32.dll")>
-   Friend Function ReleaseDC(hwnd As IntPtr, hDC As IntPtr) As Integer
+   Friend Function GetWindowRect(hWnd As IntPtr, ByRef rect As RECT) As Boolean
    End Function
 
-   <DllImport("gdi32.dll")>
-   Friend Function SelectObject(hDC As IntPtr, hObj As IntPtr) As IntPtr
+   <DllImport("user32.dll")>
+   Friend Function ReleaseDC(hwnd As IntPtr, hDC As IntPtr) As Integer
    End Function
 
    <DllImport("user32.dll")>
