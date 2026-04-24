@@ -27,6 +27,8 @@ You must install .NET Runtime 10 x64 and then just run DesktopWidgets.exe
 
 ## Roadmap
 
+2026-04-24: Add: when position is selected from settings form, main form also changes the position
+
 2026-04-24: Add: Settings form / save settings to JSON file
 2026-04-24: Add: Private and Public IP
 2026-04-24: Add: Desktop Icon by Vexels https://www.iconarchive.com/show/office-icons-by-vexels/desktop-icon.html
