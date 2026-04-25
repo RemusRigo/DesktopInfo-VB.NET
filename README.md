@@ -1,6 +1,6 @@
 # DesktopInfo
 
-An OS Desktop Information utility
+An OS Desktop Information utility xx
 
 
 
