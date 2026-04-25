@@ -7,7 +7,7 @@
 Imports System.Text.Json
 Imports System.IO
 
-Module Settings
+Module SettingsJSON
 
    Public Class AppSettings
       Public Property Position As String = "TL"

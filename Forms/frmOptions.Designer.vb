@@ -29,7 +29,11 @@ Partial Class frmOptions
       rBtnTopRight = New RadioButton()
       rBtnTopLeft = New RadioButton()
       btnOk = New Button()
+      grpBoxInstall = New GroupBox()
+      chkBoxCU = New CheckBox()
+      chkBoxLM = New CheckBox()
       grpBoxPosition.SuspendLayout()
+      grpBoxInstall.SuspendLayout()
       SuspendLayout()
       ' 
       ' grpBoxPosition
@@ -40,7 +44,7 @@ Partial Class frmOptions
       grpBoxPosition.Controls.Add(rBtnTopLeft)
       grpBoxPosition.Location = New Point(3, 3)
       grpBoxPosition.Name = "grpBoxPosition"
-      grpBoxPosition.Size = New Size(232, 124)
+      grpBoxPosition.Size = New Size(100, 120)
       grpBoxPosition.TabIndex = 1
       grpBoxPosition.TabStop = False
       grpBoxPosition.Text = "Position"
@@ -92,18 +96,50 @@ Partial Class frmOptions
       ' btnOk
       ' 
       btnOk.Anchor = AnchorStyles.Bottom Or AnchorStyles.Right
-      btnOk.Location = New Point(246, 104)
+      btnOk.Location = New Point(256, 104)
       btnOk.Name = "btnOk"
       btnOk.Size = New Size(40, 23)
       btnOk.TabIndex = 2
       btnOk.Text = "O&k"
       btnOk.UseVisualStyleBackColor = True
       ' 
+      ' grpBoxInstall
+      ' 
+      grpBoxInstall.Controls.Add(chkBoxLM)
+      grpBoxInstall.Controls.Add(chkBoxCU)
+      grpBoxInstall.Location = New Point(110, 3)
+      grpBoxInstall.Name = "grpBoxInstall"
+      grpBoxInstall.Size = New Size(130, 120)
+      grpBoxInstall.TabIndex = 4
+      grpBoxInstall.TabStop = False
+      grpBoxInstall.Text = "Install"
+      ' 
+      ' chkBoxCU
+      ' 
+      chkBoxCU.AutoSize = True
+      chkBoxCU.Location = New Point(6, 22)
+      chkBoxCU.Name = "chkBoxCU"
+      chkBoxCU.Size = New Size(91, 19)
+      chkBoxCU.TabIndex = 4
+      chkBoxCU.Text = "Current user"
+      chkBoxCU.UseVisualStyleBackColor = True
+      ' 
+      ' chkBoxLM
+      ' 
+      chkBoxLM.AutoSize = True
+      chkBoxLM.Location = New Point(6, 47)
+      chkBoxLM.Name = "chkBoxLM"
+      chkBoxLM.Size = New Size(71, 19)
+      chkBoxLM.TabIndex = 5
+      chkBoxLM.Text = "All Users"
+      chkBoxLM.UseVisualStyleBackColor = True
+      ' 
       ' frmOptions
       ' 
       AutoScaleDimensions = New SizeF(7F, 15F)
       AutoScaleMode = AutoScaleMode.Font
-      ClientSize = New Size(294, 131)
+      ClientSize = New Size(304, 131)
+      Controls.Add(grpBoxInstall)
       Controls.Add(btnOk)
       Controls.Add(grpBoxPosition)
       FormBorderStyle = FormBorderStyle.FixedSingle
@@ -114,6 +150,8 @@ Partial Class frmOptions
       Text = "Options"
       grpBoxPosition.ResumeLayout(False)
       grpBoxPosition.PerformLayout()
+      grpBoxInstall.ResumeLayout(False)
+      grpBoxInstall.PerformLayout()
       ResumeLayout(False)
    End Sub
 
@@ -123,4 +161,7 @@ Partial Class frmOptions
    Friend WithEvents rBtnTopRight As RadioButton
    Friend WithEvents rBtnTopLeft As RadioButton
    Friend WithEvents btnOk As Button
+   Friend WithEvents grpBoxInstall As GroupBox
+   Friend WithEvents chkBoxLM As CheckBox
+   Friend WithEvents chkBoxCU As CheckBox
 End Class

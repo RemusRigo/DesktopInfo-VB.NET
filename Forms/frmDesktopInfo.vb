@@ -26,7 +26,7 @@ Public Class frmDesktopInfo
    End Sub
 
    Private Sub frmDesktopInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-      cfg = Settings.Load()
+      cfg = SettingsJSON.Load()
       Me.StartPosition = FormStartPosition.Manual
       Me.AutoSize = True
       Me.AutoSizeMode = AutoSizeMode.GrowAndShrink
@@ -44,9 +44,6 @@ Public Class frmDesktopInfo
       scopePath = "\\.\root\cimv2"
       Dim scope As New ManagementScope(scopePath, myConnection)
       Dim items As New Dictionary(Of String, String)
-
-      Dim privateIP As String = GetPrivateIP()
-      Dim publicIP As String = GetPublicIP()
 
       Try
          scope.Connect()
@@ -249,8 +246,14 @@ Public Class frmDesktopInfo
             Next
          End Using
 
-         items.Add("Private IP", privateIP)
-         items.Add("Public IP", publicIP)
+         ' get Private and Public IPs (if any)
+         Dim ips = GetAllPrivateIPs()
+
+         For Each ip In ips
+            items.Add("Private IP", ip)
+         Next
+
+         items.Add("Public IP", GetPublicIP())
 
          e.Result = items
       Catch ex As Exception
