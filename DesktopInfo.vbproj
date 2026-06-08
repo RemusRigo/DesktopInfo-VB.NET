@@ -2,19 +2,15 @@
 
    <PropertyGroup>
       <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+      <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+      <ApplicationIcon>Res\Desktop.ico</ApplicationIcon>
       <MyType>WindowsFormsWithCustomSubMain</MyType>
       <OutputType>WinExe</OutputType>
       <StartupObject>Sub Main</StartupObject>
       <TargetFramework>net10.0-windows</TargetFramework>
       <UseWindowsForms>true</UseWindowsForms>
-      <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-      <ApplicationIcon>Res\Desktop.ico</ApplicationIcon>
+      <Platforms>x64;x86</Platforms>
    </PropertyGroup>
-
-   <ItemGroup>
-     <None Remove="Upload.bat" />
-     <None Remove="Upload.ps1" />
-   </ItemGroup>
 
    <ItemGroup>
      <Content Include="Res\Desktop.ico" />
@@ -67,5 +63,36 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+      <PlatformTarget>x86</PlatformTarget>
+      <OutputPath>bin\Debug\x86\</OutputPath>
+   </PropertyGroup>
+
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      <PlatformTarget>x64</PlatformTarget>
+      <OutputPath>bin\Debug\x64\</OutputPath>
+   </PropertyGroup>
+
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+      <PlatformTarget>x86</PlatformTarget>
+      <OutputPath>bin\Release\x86\</OutputPath>
+   </PropertyGroup>
+
+   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      <PlatformTarget>x64</PlatformTarget>
+      <OutputPath>bin\Release\x64\</OutputPath>
+   </PropertyGroup>
+   
+   <ItemGroup>
+      <None Remove="Add Package.bat" />
+      <None Remove="FUNDING.yml" />
+      <None Remove="LICENSE.txt" />
+      <None Remove="Publish x64.bat" />
+      <None Remove="Publish x86.bat" />
+      <None Remove="Update.bat" />
+      <None Remove="Upload.bat" />
+      <None Remove="Upload.ps1" />
+   </ItemGroup>
 
 </Project>
