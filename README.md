@@ -29,7 +29,9 @@ You must install .NET Runtime 10 and then just run DesktopInfo.exe (x64 & x86)
 
 ## Statistics
 
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/DesktopInfo-VBNET/total)
+![status](https://img.shields.io/badge/status-completed-brightgreen)
+<br>
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/RemusRigo/DesktopInfo-VB.NET/total)
 
 
 
