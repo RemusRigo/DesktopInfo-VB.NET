@@ -6,9 +6,7 @@
 
 Imports System.ComponentModel
 Imports System.Management
-Imports System.Runtime.InteropServices
-Imports System.Runtime.Versioning
-Imports System.Threading
+Imports DesktopInfo.API
 
 Public Class frmDesktopInfo
    Inherits clsAcrylicForm

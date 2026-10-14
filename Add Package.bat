@@ -1,2 +1,5 @@
+color 02
+
+cd "DesktopInfo"
 dotnet add package System.Management
-@pause
+rem dotnet add package System.Resources.Extensions
